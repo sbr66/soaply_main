@@ -1,4 +1,5 @@
 @media screen and (max-width:980px) {
+    .common-btn{font-size: var(--fs-14);}
     /* Header Style */
     header{background: #fff; border-bottom:1px solid var(--color-gray-d);}
     header .container{grid-template-columns: 1fr 1fr;}
@@ -22,15 +23,55 @@
     .overlay{position: absolute; width: 100%; height: 100%; background: #fff; opacity: .4;}
     .landing-text-box h1{text-shadow: 1px 1px 1px var(--color-gray-2);}
     .landing-text-box p{width: var(--ls-1-2);}
+
+    /* Features Section Style */
+    .features-section .feature{padding: var(--el-normal);}
+
+    /* Slide Section Style */
+    .slider-section .slider-text h4{font-size: var(--fs-20);}
+    .slider-section .slider-nav{width: 45px; height: 45px;}
+    .swiper-button-next:after, 
+    .swiper-button-prev:after{font-size: 1rem;}
+    .swiper-button-next{right: 2rem;} 
+    .swiper-button-prev{left: 2rem;}
 }
 @media screen and (max-width:786px) {
     html{font-size: 14px;}
+    .section{padding: var(--el-section-small) 0;}
+    .container{padding: 0 var(--el-medium);}
+
+    /* Meet section Style */
+    .meet-section .meet-wrapper{flex-direction: column; row-gap: var(--el-wide); padding: 0 10%;}
+    .meet-section .meet-text-box{width: var(--ls-full);}
+    .meet-section .meet-text-box p{margin: 0; width: var(--ls-full);}
+    .meet-section .meet-image-box{width: var(--ls-full);}
+   
+    /* Features Section Style */
+    .features-section .features{ flex-direction: column; row-gap: var(--el-wide);}
+    .features-section .feature{width: 60%;}
+
+    /* Slide Section Style */
+    .slider-section .slider-nav{display: none;}
+    .slider-section .swiper-slide{flex-direction: column; align-items: center;}
+    .slider-section .swiper-slide > div{ width: var(--ls-full); width: 80%; margin: auto;}
+    /* .slider-section .swiper-slide > div.slider-image{width: 80%; margin: auto;} */
+    .slider-section .slider-text {align-items: center; text-align: center;}
 }
 
 @media screen and (max-width:600px) {
     .landing-text-box{text-align: center;}
     .landing-text-box h1{font-size: 1.8rem;}
     .landing-text-box p{width: 80%; margin: auto;}
-
+    
     .overlay{opacity: 0.7;}
+    /* Meet Section Style */
+    .meet-section .meet-wrapper{padding: 0 5%;}
+    .meet-section .meet-image-box{column-gap: var(--el-normal);}
+    .meet-section .meet-left-image{row-gap: var(--el-normal);}
+    .meet-section .meet-text-box p{width: var(--ls-full); font-size: var(--fs-16);}
+    .meet-section span{font-size: var(--fs-16);}
+
+    /* Features Section Style */
+    .features-section .feature{width: 90%;}
 }
+

@@ -15,6 +15,11 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- Swiper Slide Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
 
     <!-- Main Style Sheet Link -->
     <link rel="stylesheet" href="css/style.css" />
@@ -75,7 +80,7 @@
         <div class="mobile-menus"></div>
       </header>
 
-      <section id="main-section" class="landing-section">
+      <section id="main-section" class="landing-section section">
         <img src="images/landing-image.jpeg" alt="" />
         <div class="landing-text-box container">
           <h1>소플리 컬렉션 <br />자연을 담은 수제 천연 비누</h1>
@@ -112,10 +117,113 @@
           </div>
         </div>
       </section>
+
+      <!-- Features Section -->
+      <section class="features-section section">
+        <div class="container">
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/about-icon-1.svg" alt="" />
+              </div>
+              <h4>For All Skin Types</h4>
+              <p>
+                솨아 익싸믈 올거다, 갠돍믄솨어를 이랜앨. 나예도 어리에서
+                사쎨갠천선을 마르가설 라유창글즐
+              </p>
+            </div>
+            <!-- end of feature box for loop -->
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/about-icon-2.svg" alt="" />
+              </div>
+              <h4>100% Organic</h4>
+              <p>
+                솨아 익싸믈 올거다, 갠돍믄솨어를 이랜앨. 나예도 어리에서
+                사쎨갠천선을 마르가설 라유창글즐
+              </p>
+            </div>
+            <!-- end of feature box for loop -->
+            <div class="feature">
+              <div class="feature-icon">
+                <img src="images/about-icon-3.svg" alt="" />
+              </div>
+              <h4>Cuelty-Free</h4>
+              <p>
+                솨아 익싸믈 올거다, 갠돍믄솨어를 이랜앨. 나예도 어리에서
+                사쎨갠천선을 마르가설 라유창글즐
+              </p>
+            </div>
+            <!-- end of feature box for loop -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Slider Section -->
+      <section class="slider-section section">
+        <div class="container">
+          <!-- swiper slider code here -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="slider-image">
+                  <img src="images/slide-image-1.jpeg" alt="" />
+                </div>
+                <div class="slider-text">
+                  <h4>천연 재료로부터 만들어진 자연의<br />향기를 만듭니다.</h4>
+                  <p>
+                    을마어어 만아맴어요 비긴의 미호킨는 웜얼을 라그하디 엶진슬은
+                    씨고로 도낳윱힉 욀채하기 흐쉬언멜을. 긍아 이보의 엘
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- end of swiper slide for loop -->
+              <div class="swiper-slide">
+                <div class="slider-image">
+                  <img src="images/slide-image-2.jpeg" alt="" />
+                </div>
+                <div class="slider-text">
+                  <h4>천연 재료로부터 만들어진 자연의<br />향기를 만듭니다.</h4>
+                  <p>
+                    을마어어 만아맴어요 비긴의 미호킨는 웜얼을 라그하디 엶진슬은
+                    씨고로 도낳윱힉 욀채하기 흐쉬언멜을. 긍아 이보의 엘
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- end of swiper slide for loop -->
+              <div class="swiper-slide">
+                <div class="slider-image">
+                  <img src="images/slide-image-3.jpeg" alt="" />
+                </div>
+                <div class="slider-text">
+                  <h4>천연 재료로부터 만들어진 자연의<br />향기를 만듭니다.</h4>
+                  <p>
+                    을마어어 만아맴어요 비긴의 미호킨는 웜얼을 라그하디 엶진슬은
+                    씨고로 도낳윱힉 욀채하기 흐쉬언멜을. 긍아 이보의 엘
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- end of swiper slide for loop -->
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev slider-nav"></div>
+          <div class="swiper-button-next slider-nav"></div>
+        </div>
+      </section>
     </div>
 
     <!-- Scroll Reveal Plugin -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Swiper Slider Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- Main Javascript -->
     <script src="js/custom.js"></script>
   </body>
