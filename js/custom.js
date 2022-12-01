@@ -33,6 +33,37 @@ const stickyHeader = () => {
 };
 window.addEventListener("scroll", stickyHeader);
 
+/********** Get Products Json Data *********/
+const productsBox = document.querySelector(".products");
+const getData = async () => {
+  await fetch("/data/products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let dataEl;
+      data.map((item) => {
+        console.log(item);
+        dataEl = `
+              <div class="product-frame">
+                      <div class="product-item">
+                        <img src="${item.prodPath}" alt="" />
+                        <div class="product-text">
+                          <h4>${item.prodTit}</h4>
+                          <strong>${item.prodPri}</strong>
+                          <p>
+                            ${item.prodDes}
+                          </p>
+                          <a href="#" class="common-btn">자세히 보기</a>
+                        </div>
+                      </div>
+                    </div>
+      `;
+        productsBox.innerHTML += dataEl;
+      });
+    })
+    .catch((err) => console.log(err));
+};
+getData();
+
 /********** Scrollreveal Effect *********/
 const sr = ScrollReveal({
   reset: false,
@@ -44,7 +75,7 @@ sr.reveal(".landing-text-box", {
   origin: "right",
   distance: "80px",
 });
-sr.reveal(".meet-text-box", {
+sr.reveal(".meet-text-box, .swiper", {
   duration: 1000,
   origin: "bottom",
   distance: "40px",

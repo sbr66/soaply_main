@@ -1,0 +1,64 @@
+<div class="product-frame">
+              <div class="product-item">
+                <img src="images/offers-image-1.jpeg" alt="" />
+                <div class="product-text">
+                  <h4>My Perfect Bath Set</h4>
+                  <strong>&#8361;8.500</strong>
+                  <p>
+                    쏘고니까 사듰그발지요, 묶엥므 져긔잔익어야
+                    넬간다니징으느라고 틱이 아악니
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- 상품 컨텐츠를 담는 박스 -->
+            </div>
+            <!-- 반복되는 상품 각각의 박스 -->
+            <div class="product-frame">
+              <div class="product-item">
+                <img src="images/offers-image-2.jpeg" alt="" />
+                <div class="product-text">
+                  <h4>My Perfect Bath Set</h4>
+                  <strong>&#8361;8.500</strong>
+                  <p>
+                    쏘고니까 사듰그발지요, 묶엥므 져긔잔익어야
+                    넬간다니징으느라고 틱이 아악니
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- 상품 컨텐츠를 담는 박스 -->
+            </div>
+            <!-- 반복되는 상품 각각의 박스 -->
+            <div class="product-frame">
+              <div class="product-item">
+                <img src="images/offers-image-3.jpeg" alt="" />
+                <div class="product-text">
+                  <h4>My Perfect Bath Set</h4>
+                  <strong>&#8361;8.500</strong>
+                  <p>
+                    쏘고니까 사듰그발지요, 묶엥므 져긔잔익어야
+                    넬간다니징으느라고 틱이 아악니
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- 상품 컨텐츠를 담는 박스 -->
+            </div>
+            <!-- 반복되는 상품 각각의 박스 -->
+            <div class="product-frame">
+              <div class="product-item">
+                <img src="images/offers-image-1.jpeg" alt="" />
+                <div class="product-text">
+                  <h4>My Perfect Bath Set</h4>
+                  <strong>&#8361;8.500</strong>
+                  <p>
+                    쏘고니까 사듰그발지요, 묶엥므 져긔잔익어야
+                    넬간다니징으느라고 틱이 아악니
+                  </p>
+                  <a href="#" class="common-btn">자세히 보기</a>
+                </div>
+              </div>
+              <!-- 상품 컨텐츠를 담는 박스 -->
+            </div>
+            <!-- 반복되는 상품 각각의 박스 -->

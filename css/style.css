@@ -33,7 +33,7 @@
   --fs-16: 1rem;
   --fs-18: 1.125rem;
   --fs-20: 1.25rem;
-  --fs-title: 2.5rem;
+  --fs-title: 1.8rem;
   --fs-button: 0.875rem;
   --fs-name: 1.25rem;
   --fs-small-text: 0.875rem;
@@ -68,11 +68,16 @@ input, textarea, button{outline: 0;border: 0; background: #fff; border-radius: 0
 .wrapper{width: var(--ls-full); height: auto; overflow: hidden;}
 .container{width: var(--ls-full); height: auto; max-width: 1280px; margin:auto; padding: 0 var(--el-wide);}
 .section{width: var(--ls-full); height: auto; padding: var(--el-section) 0;}
+
 /* common button style */
 .common-btn{background: var(--color-black); color: #fff; padding: var(--el-small) var(--el-medium); border-radius: .25rem; 
   font-size:var(--fs-14); width: fit-content;}
 .common-btn:hover{background: var(--color-gray-3);}
 
+/* common title style */
+.title-box{width: var(--ls-full); border-bottom: 1px solid var(--color-gray-3); display: flex; 
+  justify-content: space-between; padding: var(--el-normal); align-items: center; margin-bottom: var(--el-medium);}
+.section-title{font-size:var(--fs-title); font-weight: var(--fw-400); }
 
 /********** Landing Section Style *********/
 #main-section{padding: 0; width: var(--ls-full); height: 100vh; position: relative; min-height: 100vh; 
@@ -216,3 +221,29 @@ span.bar_line:nth-child(2){margin:5px auto;}
 
 .swiper-pagination-bullet{width: 12px; height: 12px;}
 .swiper-pagination-bullet-active{background: var(--color-black);}
+
+/********** Special Offer Section Style *********/
+/* .offers-section .title-box h2{font-weight: var(--fw-300); text-align: center;}
+.offers-section .products{display: flex; flex-wrap: wrap;}
+.offers-section .product-frame{width: 33.33%; padding: var(--el-medium);}
+.offers-section img{width: 100%;}
+.offers-section .product-text{display: flex; flex-direction: column; row-gap: var(--el-medium); padding-top: var(--el-medium); 
+  align-items: center;}
+.offers-section .product-text h4{font-weight: var(--fw-300);}
+.offers-section .product-text p{text-align: center; font-weight: var(--fw-300); font-size: var(--fs-14);} */
+
+.offers-section .products{display: flex; flex-wrap: wrap;}
+.offers-section .product-frame{width: var(--ls-1-3); padding: var(--el-medium);}
+.offers-section .product-frame img{width: 100%; border-radius: .25rem;}
+.offers-section .product-text{text-align: center; display: flex; flex-direction: column; row-gap: var(--el-normal); 
+  align-items: center; margin-top: var(--el-normal);}
+.offers-section .product-text h4{font-size: var(--fs-name); font-weight: var(--fw-400);}
+.offers-section .product-text strong{font-size: var(--fs-18);}
+.offers-section .product-text p{padding: var(--el-medium); font-size: var(--fs-small-text);}
+
+/********** Review Section Style *********/
+.review-section{background: url(/images/review-background.jpeg) no-repeat center; background-size: cover;}
+.review-section .reviews{display: flex; flex-wrap: wrap;}
+.review-section .review-frame{width: var(--ls-1-3); padding: var(--el-medium);}
+.review-section .review-item{background: #fff; padding: var(--el-wide); border-radius: .25rem; text-align: center;}
+.review-section .review-item p{font-size: var(--fs-small-text); margin-bottom: var(--el-medium); }
