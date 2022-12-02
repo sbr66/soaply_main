@@ -41,7 +41,7 @@ const getData = async () => {
     .then((data) => {
       let dataEl;
       data.map((item) => {
-        console.log(item);
+        //console.log(item);
         dataEl = `
               <div class="product-frame">
                       <div class="product-item">
@@ -75,7 +75,7 @@ sr.reveal(".landing-text-box", {
   origin: "right",
   distance: "80px",
 });
-sr.reveal(".meet-text-box, .swiper", {
+sr.reveal(".meet-text-box, .swiper, .products, .review-frame", {
   duration: 1000,
   origin: "bottom",
   distance: "40px",

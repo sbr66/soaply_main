@@ -244,6 +244,32 @@ span.bar_line:nth-child(2){margin:5px auto;}
 /********** Review Section Style *********/
 .review-section{background: url(/images/review-background.jpeg) no-repeat center; background-size: cover;}
 .review-section .reviews{display: flex; flex-wrap: wrap;}
-.review-section .review-frame{width: var(--ls-1-3); padding: var(--el-medium);}
+.review-section .review-frame{width: var(--ls-1-3); padding: var(--el-medium); }
 .review-section .review-item{background: #fff; padding: var(--el-wide); border-radius: .25rem; text-align: center;}
-.review-section .review-item p{font-size: var(--fs-small-text); margin-bottom: var(--el-medium); }
+.review-section .review-item p{font-size: var(--fs-small-text); margin-bottom: var(--el-medium); display: -webkit-box; overflow: hidden;
+  text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 4}
+
+.review-section .review-writer{ display: flex; flex-direction: column; row-gap: var(--el-small); align-items: center;}
+.review-section .review-writer img{width: 5rem; border-radius: 50%;}
+.review-section .review-writer h4{font-size: var(--fs-name); font-weight: var(--fw-400);}
+.review-section .review-writer em{font-style: normal; font-size: var(--fs-small-text);}
+
+/********** Gallery Section Style *********/
+
+.gallery-section .gallery-wrapper {width: 100%; height: auto; max-height: 800px; overflow: auto;}
+.gallery-section .grid-item{width: var(--ls-1-3); padding: var(--el-small);}
+.gallery-section .grid-item img{width: var(--ls-full); border-radius: .25rem;}
+
+/********** Insta Section Style *********/
+/* 
+.insta-section .insta-wrapper{display: flex;}
+.insta-section .insta-wrapper .insta-item{width: var(--ls-1-3);}
+.insta-section .insta-wrapper .insta-item img{width: 100%;} */
+
+.insta-section .insta-wrapper{display: grid; grid-template-columns: 1fr 1fr 1fr;}
+.insta-section .insta-wrapper > div{}
+/* .insta-section .insta-wrapper > div > img{width: var(--ls-1-2);} */
+.insta-section .insta-image{display: flex; flex-wrap: wrap; justify-content: space-between;
+  column-gap: .25rem; }
+.insta-section .insta-image img > div{ width: calc(var(--ls-1-2) - .25rem);}
+.insta-section .insta-image img{width: var(--ls-full);}
