@@ -40,4 +40,14 @@ $(function () {
   };
 
   $.getJSON("/data/gallery.json", getGalleryData);
+
+  // Navigation Moving to Target Section
+  $(".nav-lists li").on("click", function () {
+    const targetIdx = $(this).index();
+    //console.log(targetIdx);
+    //console.log($(".nav-target").eq(0));
+    const pagePosition = $(".nav-target").eq(targetIdx).offset().top;
+
+    $("html, body").animate({ scrollTop: pagePosition }, 300);
+  });
 }); // recommended...
