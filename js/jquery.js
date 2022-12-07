@@ -22,7 +22,7 @@ $(function () {
 
       const galleryItems = `
                 <div class="grid-item">
-                <img src="/images/${item.datamain}" alt="" />
+                <img src="/main_project/images/${item.datamain}" alt="" />
                 </div>
             `;
       items.push($(galleryItems).get(0));
@@ -39,15 +39,15 @@ $(function () {
     });
   };
 
-  $.getJSON("/data/gallery.json", getGalleryData);
+  $.getJSON("/main_project/data/gallery.json", getGalleryData);
 
-  // Navigation Moving to Target Section
-  $(".nav-lists li").on("click", function () {
-    const targetIdx = $(this).index();
-    //console.log(targetIdx);
-    //console.log($(".nav-target").eq(0));
-    const pagePosition = $(".nav-target").eq(targetIdx).offset().top;
+  // // Navigation Moving to Target Section
+  // $(".nav-lists li").on("click", function () {
+  //   const targetIdx = $(this).index();
+  //   //console.log(targetIdx);
+  //   //console.log($(".nav-target").eq(0));
+  //   const pagePosition = $(".nav-target").eq(targetIdx).offset().top;
 
-    $("html, body").animate({ scrollTop: pagePosition }, 300);
-  });
+  //   $("html, body").animate({ scrollTop: pagePosition }, 300);
+  // });
 }); // recommended...

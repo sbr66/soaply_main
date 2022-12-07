@@ -36,7 +36,7 @@ window.addEventListener("scroll", stickyHeader);
 /********** Get Products Json Data *********/
 const productsBox = document.querySelector(".products");
 const getData = async () => {
-  await fetch("/data/products.json")
+  await fetch("/main_project/data/products.json")
     .then((response) => response.json())
     .then((data) => {
       let dataEl;
@@ -45,7 +45,7 @@ const getData = async () => {
         dataEl = `
               <div class="product-frame">
                       <div class="product-item">
-                        <img src="${item.prodPath}" alt="" />
+                        <img src="/main_project${item.prodPath}" alt="" />
                         <div class="product-text">
                           <h4>${item.prodTit}</h4>
                           <strong>${item.prodPri}</strong>
@@ -64,13 +64,27 @@ const getData = async () => {
 };
 getData();
 
-/********** Fit Insta Image Height*********/
+/********** Fit Insta Image Height *********/
 const instaImgHeight = document.querySelector("#h").scrollHeight;
 document.querySelector("#fh").style.height = instaImgHeight + "px";
 
 window.addEventListener("resize", () => {
   const instaImgHeight = document.querySelector("#h").scrollHeight;
   document.querySelector("#fh").style.height = instaImgHeight + "px";
+});
+
+/********** Navigation Moving to Target Section *********/
+
+const navLists = document.querySelectorAll("header .container .nav-lists li");
+const navTargets = document.querySelectorAll(".nav-target");
+
+navLists.forEach((navL) => {
+  navL.addEventListener("click", () => {
+    navTargets.forEach((navT) => {
+      const location = navT.offsetTop;
+      console.log(location);
+    });
+  });
 });
 
 /********** Scrollreveal Effect *********/
