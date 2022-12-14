@@ -89,13 +89,32 @@
       <!-- Sign Up form Field Section -->
       <div class="sign-box">
         <h2 class="sign-title">SIGN UP</h2>
-        <form action="#" method="post">
-          <p><input type="text" placeholder="성" name="" /></p>
-          <p><input type="text" placeholder="이름" name="" /></p>
-          <p><input type="email" placeholder="이메일" name="" /></p>
-          <p><input type="password" placeholder="비밀번호" name="" /></p>
-          <p><input type="password" placeholder="비밀번호 확인" /></p>
+        <form onsubmit="return false">
+          <p>
+            <input type="text" placeholder="이름" name="name" class="name" />
+          </p>
+          <p><input type="text" placeholder="아이디" name="id" class="id" /></p>
+          <p>
+            <input
+              type="email"
+              placeholder="이메일"
+              name="email"
+              class="email"
+            />
+          </p>
+          <p>
+            <input
+              type="password"
+              placeholder="비밀번호"
+              name="pwd"
+              class="pwd"
+            />
+          </p>
+          <p>
+            <input type="password" placeholder="비밀번호 확인" class="rpwd" />
+          </p>
           <p class="send-btn"><input type="submit" value="회원 가입하기" /></p>
+          <input type="hidden" value="signup" name="req_sign" />
           <span class="sign-line"></span>
           <p class="sign-msg">이미 회원이세요? | <a href="#">로그인하기</a></p>
         </form>
@@ -146,5 +165,6 @@
 
     <!-- Main Javascript -->
     <script src="/main_project/js/header.js"></script>
+    <script src="/main_project/js/signup.js"></script>
   </body>
 </html>

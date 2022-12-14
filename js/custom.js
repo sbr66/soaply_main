@@ -52,12 +52,11 @@ window.addEventListener("resize", () => {
 const navLists = document.querySelectorAll("header .container .nav-lists li");
 const navTargets = document.querySelectorAll(".nav-target");
 
-navLists.forEach((navL) => {
+navLists.forEach((navL, i) => {
   navL.addEventListener("click", () => {
-    navTargets.forEach((navT) => {
-      const location = navT.offsetTop;
-      console.log(location);
-    });
+    const location = navTargets[i].offsetTop;
+    //console.log(location);
+    window.scrollTo({ top: location });
   });
 });
 

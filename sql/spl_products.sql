@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- 생성 시간: 22-12-08 01:44
+-- 생성 시간: 22-12-13 02:21
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.1.12
 
@@ -24,15 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `spl_user`
+-- 테이블 구조 `spl_products`
 --
 
-CREATE TABLE `spl_user` (
-  `user_idx` int(11) NOT NULL COMMENT '유저 인덱스',
-  `user_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '이름',
-  `user_id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '아이디',
-  `user_email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '이메일',
-  `user_pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '비밀번호'
+CREATE TABLE `spl_products` (
+  `pro_idx` int(11) NOT NULL COMMENT '상품 고유번호',
+  `pro_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '상품 이름',
+  `pro_desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '상품 설명',
+  `pro_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '상품 사진',
+  `pro_reg` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '상품 등록일'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -40,20 +40,20 @@ CREATE TABLE `spl_user` (
 --
 
 --
--- 테이블의 인덱스 `spl_user`
+-- 테이블의 인덱스 `spl_products`
 --
-ALTER TABLE `spl_user`
-  ADD PRIMARY KEY (`user_idx`);
+ALTER TABLE `spl_products`
+  ADD PRIMARY KEY (`pro_idx`);
 
 --
 -- 덤프된 테이블의 AUTO_INCREMENT
 --
 
 --
--- 테이블의 AUTO_INCREMENT `spl_user`
+-- 테이블의 AUTO_INCREMENT `spl_products`
 --
-ALTER TABLE `spl_user`
-  MODIFY `user_idx` int(11) NOT NULL AUTO_INCREMENT COMMENT '유저 인덱스';
+ALTER TABLE `spl_products`
+  MODIFY `pro_idx` int(11) NOT NULL AUTO_INCREMENT COMMENT '상품 고유번호';
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
