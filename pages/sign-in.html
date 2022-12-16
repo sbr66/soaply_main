@@ -29,6 +29,34 @@
         class="header-wrapper"
         w3-include-html="/main_project/include/header.html"
       ></div>
+
+      <!-- Sign In form Field Section -->
+      <div class="sign-box">
+        <h2 class="sign-title">SIGN IN</h2>
+        <form onsubmit="return false">
+          <!-- <form action="/main_backend/model/register.php" method="POST"> -->
+          <p><input type="text" placeholder="아이디" name="id" class="id" /></p>
+          <p>
+            <input
+              type="password"
+              placeholder="비밀번호"
+              name="pwd"
+              class="pwd"
+            />
+          </p>
+
+          <p class="send-btn"><input type="submit" value="로그인 하기" /></p>
+          <input type="hidden" value="signin" name="req_sign" />
+          <span class="sign-line"></span>
+          <strong id="so">sign-out</strong>
+
+          <p class="sign-msg">
+            아직 회원이 아니세요? |
+            <a href="/main_project/pages/sign-up.html">회원가입 하기</a>
+          </p>
+        </form>
+      </div>
+
       <!-- Footer Include -->
       <div
         class="footer-wrapper"
@@ -37,7 +65,8 @@
     </div>
     <!-- Main Javascript -->
     <script src="/main_project/js/header.js"></script>
-    <!-- <script src="/main_project/js/signup.js"></script> -->
+    <script src="/main_project/js/signin.js"></script>
+    <script src="/main_project/js/loginResponse.js"></script>
 
     <!-- Include Files -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
