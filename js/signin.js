@@ -25,6 +25,7 @@ signin.addEventListener("click", () => {
     })
     .then((data) => {
       console.log(data);
+      location.href = "/main_project/index.html";
     })
     .catch((err) => {
       console.log(err);
