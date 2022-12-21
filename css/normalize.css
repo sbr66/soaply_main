@@ -70,8 +70,7 @@ input, textarea, button{outline: 0;border: 0; background: #fff; border-radius: 0
 .section{width: var(--ls-full); height: auto; padding: var(--el-section) 0;}
 
 /* common button style */
-.common-btn{background: var(--color-black); color: #fff; padding: var(--el-small) var(--el-medium); border-radius: .25rem; 
-  font-size:var(--fs-14); width: fit-content;}
+.common-btn{background: var(--color-black); color: #fff; padding: var(--el-small) var(--el-medium); border-radius: .25rem; font-size:var(--fs-14); width: fit-content;}
 .common-btn:hover{background: var(--color-gray-3);}
 
 /* common title style */
