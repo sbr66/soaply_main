@@ -20,7 +20,7 @@ $(function () {
 // imgFileSelect function here..
 const imgFileSelect = (event) => {
   const input = event.target; // 변화된 입력창 타겟 저장
-  const reader = new FileReader(); //FileReader 기능 저장
+  const reader = new FileReader(); //FileReader 기능 저장 - 서버로 전송되는 파일의 정보를 읽음
 
   reader.onload = function () {
     const dataURL = reader.result; //base64로 인코딩된 값
