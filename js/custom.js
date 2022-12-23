@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
 /********** Get Products Json Data *********/
 const productsBox = document.querySelector(".products");
 const getData = async () => {
-  await fetch("/main_project/data/products.json")
+  await fetch("/main_backend/model/requestProduct.php")
     .then((response) => response.json())
     .then((data) => {
       let dataEl;
