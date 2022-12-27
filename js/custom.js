@@ -12,27 +12,27 @@ window.addEventListener("load", function () {
 /********** Get Products Json Data *********/
 const productsBox = document.querySelector(".products");
 const getData = async () => {
-  await fetch("/main_backend/model/requestProduct.php")
+  await fetch("/main_backend/model/get_products.php")
     .then((response) => response.json())
     .then((data) => {
       let dataEl;
       data.map((item) => {
         //console.log(item);
         dataEl = `
-              <div class="product-frame">
-                      <div class="product-item">
-                        <img src="/main_project${item.prodPath}" alt="" />
-                        <div class="product-text">
-                          <h4>${item.prodTit}</h4>
-                          <strong>${item.prodPri}</strong>
-                          <p>
-                            ${item.prodDes}
-                          </p>
-                          <a href="#" class="common-btn">자세히 보기</a>
+                <div class="product-frame">
+                        <div class="product-item">
+                          <img src="/main_project/images/products/${item.pro_img}" alt="" />
+                          <div class="product-text">
+                            <h4>${item.pro_name}</h4>
+                            <strong>${item.pro_pri}</strong>
+                            <p>
+                              ${item.pro_desc}
+                            </p>
+                            <a href="/main_project/pages/details.html?idx=${item.pro_idx}" class="common-btn">자세히 보기</a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-      `;
+        `;
         productsBox.innerHTML += dataEl;
       });
     })

@@ -81,7 +81,7 @@
 
 .offers-section .products{display: flex; flex-wrap: wrap;}
 .offers-section .product-frame{width: var(--ls-1-3); padding: var(--el-medium);}
-.offers-section .product-frame img{width: 100%; border-radius: .25rem;}
+.offers-section .product-frame img{width: 100%; border-radius: .25rem; height: 350px;}
 .offers-section .product-text{text-align: center; display: flex; flex-direction: column; row-gap: var(--el-normal); 
   align-items: center; margin-top: var(--el-normal);}
 .offers-section .product-text h4{font-size: var(--fs-name); font-weight: var(--fw-400);}
