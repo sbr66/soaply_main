@@ -34,6 +34,7 @@
     .swiper-button-prev:after{font-size: 1rem;}
     .swiper-button-next{right: 2rem;} 
     .swiper-button-prev{left: 2rem;}
+    
     /* Product Section Style */
     .offers-section .product-frame{padding: var(--el-normal);}
     .offers-section .product-frame img{height: 250px;}
@@ -47,6 +48,11 @@
     .insta-section .insta-wrapper{column-gap: var(--el-small);}
     .insta-section .insta-info h4{font-size: var(--fs-name);}
     
+    /* Detail Page Style */
+    .line{margin: var(--el-normal) 0;}
+    .details .detail-image{max-height: 350px;}
+    .details .detail-text h2{font-size: 1.5rem;}
+    .details .price p{font-size: var(--fs-14);}
 }
 @media screen and (max-width:786px) {
     html{font-size: 14px;}
@@ -123,6 +129,11 @@
      .sign .sign-box{width: 95vw;}
      .sign p input:not(input[type="submit"]){padding: var(--el-normal);}
      .sign p.send-btn input{padding: var(--el-normal);}
+
+     /* Detail Page Style */
+     .details .detail-wrapper .container{grid-template-columns: repeat(1, 1fr);}
+     .details .detail-wrapper .container > div:nth-child(3){grid-column:unset;}
+     .details .detail-wrapper .container > div:nth-child(1){width: 80%; margin: 0 auto var(--el-medium);}
 }
 
 @media screen and (max-width:400px) {
