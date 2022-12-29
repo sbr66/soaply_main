@@ -66,6 +66,7 @@ ol,ul{list-style: none;}
 a{text-decoration: none; color: var(--color-black);}
 img{display: block;}
 input, textarea, button{outline: 0;border: 0; background: #fff; border-radius: 0;}
+em, strong{font-style: normal; font-weight: var(--fw-400);}
 
 /********** Common Style *********/
 .wrapper{width: var(--ls-full); height: auto; overflow: hidden;}

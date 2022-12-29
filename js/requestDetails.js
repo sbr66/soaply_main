@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   const url = document.location.href;
-  console.log(url);
+  // console.log(url);
   // split 메서드 참조 : https://hianna.tistory.com/377
   const urlIndex = Number(url.split("=")[1]); // string 타입의 urlIndex를 number 타입으로 변경
   ///console.log(typeof urlIndex);
@@ -66,8 +66,8 @@ window.addEventListener("load", function () {
         let count = Number(countEl.textContent); // 카운팅 숫자
         let sumPrice = Number(sumEl.textContent.replace(",", "")); // 합산 가격
 
-        console.log(count); // number
-        console.log(sumPrice); //  db에 입력한 가격에 ',' 때문에 Num db에서 ',' 제거하면 값 출력
+        //console.log(count); // number
+        //console.log(sumPrice); //  db에 입력한 가격에 ',' 때문에 Num db에서 ',' 제거하면 값 출력
 
         countBtn.forEach((btn) => {
           btn.addEventListener("click", function () {

@@ -134,6 +134,9 @@
      .details .detail-wrapper .container{grid-template-columns: repeat(1, 1fr);}
      .details .detail-wrapper .container > div:nth-child(3){grid-column:unset;}
      .details .detail-wrapper .container > div:nth-child(1){width: 80%; margin: 0 auto var(--el-medium);}
+
+     .details .comment-form textarea{width: 75%;}
+     .details .comment-form button{width: 25%;}
 }
 
 @media screen and (max-width:400px) {

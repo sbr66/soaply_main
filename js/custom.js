@@ -1,7 +1,7 @@
 /********** Get Products Json Data *********/
 const productsBox = document.querySelector(".products");
 const getData = async () => {
-  await fetch("/main_backend/model/get_products.php")
+  await fetch("/main_backend/model/get_products.php?qnt=6")
     .then((response) => response.json())
     .then((data) => {
       let dataEl;
@@ -46,16 +46,16 @@ window.addEventListener("resize", () => {
 
 /********** Navigation Moving to Target Section *********/
 
-const navLists = document.querySelectorAll("header .container .nav-lists li");
-const navTargets = document.querySelectorAll(".nav-target");
+// const navLists = document.querySelectorAll("header .container .nav-lists li");
+// const navTargets = document.querySelectorAll(".nav-target");
 
-navLists.forEach((navL, i) => {
-  navL.addEventListener("click", () => {
-    const location = navTargets[i].offsetTop;
-    //console.log(location);
-    window.scrollTo({ top: location });
-  });
-});
+// navLists.forEach((navL, i) => {
+//   navL.addEventListener("click", () => {
+//     const location = navTargets[i].offsetTop;
+//     //console.log(location);
+//     window.scrollTo({ top: location });
+//   });
+// });
 
 window.addEventListener("load", function () {
   //********** Scrollreveal Effect *********/
