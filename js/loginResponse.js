@@ -34,7 +34,8 @@ window.addEventListener("load", function () {
       const signoutBtn = document.querySelector(".signout a");
 
       if (signoutBtn) {
-        signoutBtn.addEventListener("click", () => {
+        signoutBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // 로그아웃하면 주소값 끝에 #이 붙으면서 details 페이지 사진들 사라짐 -> preventDefault()로 signoutBtn(a 태그)의 디폴트 속성 지움(href="#" 지움)
           this.fetch("/main_backend/model/register.php?q=signout")
             .then((res) => res.json())
             .then((data) => {
