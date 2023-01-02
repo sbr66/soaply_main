@@ -47,3 +47,4 @@ em, strong{font-style: normal;  font-weight: var(--fw-400);}
 .details .comment-list:nth-child(3){margin-top: var(--el-wide);} /*:nth-child() 사용할때는 부모요소 확인*/
 .details .comment-list .list-info{width: 100%; height: auto; display: flex; align-items: center; font-size: var(--fs-12); color: var(--color-gray-5); column-gap: .25rem;}
 .details .comment-list p{font-size: var(--fs-14);  color: var(--color-gray-5);}
+.no-list{width: 100%; height: auto; text-align: center; font-size: var(--fs-14); padding: var(--el-medium) 0;}
