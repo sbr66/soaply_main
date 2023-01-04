@@ -2,6 +2,7 @@ window.addEventListener("load", function () {
   const userIcon = document.querySelectorAll(".user");
   // console.log(userIcon); // 2개 배열 요소
   const adminIcon = document.querySelectorAll(".admin");
+  const cart = document.querySelector(".cart");
 
   this.fetch("/main_backend/etc/check_sign.php")
     .then((res) => {
@@ -9,6 +10,7 @@ window.addEventListener("load", function () {
     })
     .then((data) => {
       console.log(data.userid, data.user_idx);
+      cart.innerHTML = ` <a href="#"><i class="ri-shopping-cart-line"></i><em>(5)</em></a>`;
       if (data.userid === "guest") {
         adminIcon.forEach((item) => {
           item.style.display = "none";
