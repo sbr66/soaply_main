@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/main_project/css/normalize.css" />
     <link rel="stylesheet" href="/main_project/css/header-footer.css" />
     <link rel="stylesheet" href="/main_project/css/shop-gallery.css" />
+    <link rel="stylesheet" href="/main_project/css/style.css" />
     <link rel="stylesheet" href="/main_project/css/media.css" />
   </head>
   <body>
@@ -34,6 +35,14 @@
         <div class="product-text">
           <h4 class="section-title">상품 갤러리</h4>
         </div>
+        <div class="gallery-wrapper">
+          <div class="container">
+            <div class="grid"></div>
+            <div class="load-more">
+              <button class="common-btn">더보기</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Footer Include -->
@@ -46,8 +55,22 @@
     <!-- Include Files -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="/main_project/js/include.js"></script>
+
+    <!-- jQuery framework -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Masonry and Imagesloaded plugins -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
     <!-- Main Javascript -->
     <script src="/main_project/js/header.js"></script>
+    <script src="/main_project/js/fixedHeader.js"></script>
+    <script src="/main_project/js/requestGallery.js"></script>
     <script src="/main_project/js/loginResponse.js"></script>
   </body>
 </html>

@@ -39,7 +39,23 @@ const getData = async () => {
         `;
         productsBox.innerHTML += dataEl;
       });
+      loadMore();
     })
     .catch((err) => console.log(err));
 };
 getData();
+
+function loadMore() {
+  // console.log($(".product-frame"));
+  const prfr = $(".product-frame");
+  prfr.hide();
+  prfr.slice(0, 3).show(); // slice(a, b) 반복되는 요소에서 'a' 인덱스번째부터 'b' 인덱스 갯수만큼 추출
+
+  $(".load-more button").on("click", function () {
+    $(".product-frame:hidden").slice(0, 3).show();
+    console.log($(".product-frame:hidden").length); // hidden으로 숨겨진 남아있는 갯수
+    if ($(".product-frame:hidden").length === 0) {
+      $(".load-more").hide();
+    }
+  });
+}

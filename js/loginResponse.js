@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   // console.log(userIcon); // 2개 배열 요소
   const adminIcon = document.querySelectorAll(".admin");
   const cart = document.querySelectorAll(".cart");
-  console.log(cart);
+  // console.log(cart);
   this.fetch("/main_backend/etc/check_sign.php")
     .then((res) => {
       return res.json();

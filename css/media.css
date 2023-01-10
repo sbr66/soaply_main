@@ -116,10 +116,10 @@
     .product-frame{width: var(--ls-full);}
     .product-frame img{width: 60%; margin: auto;}
 
-     /* Review Section Style */
+    /* Review Section Style */
      .review-section .review-frame{width: var(--ls-full);}
-     /* Gallery Section Style */
-     .gallery-section .grid-item{width: var(--ls-1-2); padding: .25rem;}
+    /* Gallery Section Style */
+    .grid-item{width: var(--ls-1-2); padding: .25rem;}
     /* Insta Section Style */
     .insta-section .insta-wrapper{grid-template-columns: 1fr; row-gap:var(--el-wide);}
     .insta-section .insta-info{order: 1;}
