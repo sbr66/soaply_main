@@ -1,12 +1,4 @@
 $(function () {
-  // const galPgadr = window.location.href;
-  // let galQueryQnt;
-  // if (galPgadr.includes("gallery")) {
-  //   galQueryQnt = "all";
-  // } else {
-  //   galQueryQnt = 3;
-  // }
-
   //   // Masonry Effect
   //   $(".grid").masonry({
   //     // options
@@ -21,6 +13,12 @@ $(function () {
   let initCount = 3; // 초기에 뿌려질 데이터 갯수
   let addCount = 0; // 특정 동작(클릭)시 추가될 데이터 갯수
   let allData = []; // 전체 데이터 요소가 들어갈 초기 공간
+  const galPgadr = window.location.href;
+  if (galPgadr.includes("gallery")) {
+    initCount = 3;
+  } else {
+    initCount = 9;
+  }
 
   $(".grid").masonry({
     // options
