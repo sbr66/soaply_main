@@ -1,4 +1,12 @@
 $(function () {
+  // const galPgadr = window.location.href;
+  // let galQueryQnt;
+  // if (galPgadr.includes("gallery")) {
+  //   galQueryQnt = "all";
+  // } else {
+  //   galQueryQnt = 3;
+  // }
+
   //   // Masonry Effect
   //   $(".grid").masonry({
   //     // options
@@ -14,12 +22,18 @@ $(function () {
   let addCount = 0; // 특정 동작(클릭)시 추가될 데이터 갯수
   let allData = []; // 전체 데이터 요소가 들어갈 초기 공간
 
+  $(".grid").masonry({
+    // options
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-sizer",
+  });
+
   // 2. 데이터 요청 후 초기 기능함수(initGalData) 실행
   $.getJSON("/main_backend/model/get_products.php?qnt=all", initGalData);
 
   // 3. 초기 기능함수 작성
   function initGalData(data) {
-    console.log(data);
+    // console.log(data);
     allData = data; // 변수 입력 후 함수(getGalleryData) 전달
     getGalleryData(); // allData 지역 변수를 getGalleryData에서 사용하기 위해 사용될 getGalleryData함수를 작성하여 연결한다.
     // 4. 로드 모어 클릭 함수 선언
@@ -49,17 +63,12 @@ $(function () {
       //gridBox.innerHTML += galleryItems;
     });
     $(".grid").append(items);
-    // $(".grid").imagesLoaded(function () {
-    //   // Masonry Effect
-    //   $(".grid").masonry({
-    //     // options
-    //     itemSelector: ".grid-item",
-    //     //columnWidth: 200
-    //   });
-    // });
+    $(".grid").imagesLoaded(function () {
+      $(".grid").masonry("appended", items);
+    });
 
     addCount += slicedData.length; // addCount = addCount+slicedData.length
-    console.log(addCount);
+    // console.log(addCount);
 
     if (addCount === allData.length) {
       $(".load-more").hide();

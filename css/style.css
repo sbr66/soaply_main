@@ -104,6 +104,7 @@
 /********** Gallery Section Style *********/
 
 .gallery-section .gallery-wrapper {width: 100%; height: auto; max-height: 800px; overflow: auto;}
+.grid-sizer{width: var(--ls-1-3);}
 .grid-item{width: var(--ls-1-3); padding: var(--el-small); position: relative;}
 .grid-item img{width: var(--ls-full); border-radius: .25rem;}
 

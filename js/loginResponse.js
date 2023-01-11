@@ -9,15 +9,26 @@ window.addEventListener("load", function () {
       return res.json();
     })
     .then((data) => {
-      console.log(data.userid, data.user_idx, data.cart_count);
+      console.log(
+        "id :",
+        data.userid,
+        "user idx :",
+        data.user_idx,
+        "cart count :",
+        data.cart_count,
+        "user level :",
+        data.user_lvl
+      );
 
       const cartItemEl = `<a href="/main_project/pages/cart.html"><i class="ri-shopping-cart-line"></i><em>(${data.cart_count})</em></a>`;
 
       if (data.userid === "guest") {
+        // 로그인 하지 않았을때
         adminIcon.forEach((item) => {
           item.style.display = "none";
-        });
+        }); // admin icon 가림
         userIcon.forEach((item) => {
+          // 사용자 정보 없는 유저 아이콘
           item.innerHTML = `<a href="/main_project/pages/sign-in.html">
           <i class="ri-user-3-fill"></i>
         </a>`;
@@ -27,19 +38,35 @@ window.addEventListener("load", function () {
         // </a>`;
         cart.forEach((item) => {
           item.innerHTML = cartItemEl;
-        });
+        }); // 카트 숫자 아이콘
       } else {
-        adminIcon.forEach((item) => {
-          item.style.display = "flex";
-        });
-        userIcon.forEach((item) => {
-          item.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
-        });
-        // userIcon.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
+        if (data.user_lvl === 1) {
+          // 어드민 계정으로 로그인 했을 경우
+          adminIcon.forEach((item) => {
+            item.style.display = "flex"; // admin icon 보이게
+          });
+          userIcon.forEach((item) => {
+            item.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
+          });
+          // userIcon.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
 
-        cart.forEach((item) => {
-          item.innerHTML = cartItemEl;
-        });
+          cart.forEach((item) => {
+            item.innerHTML = cartItemEl;
+          });
+        } else {
+          // 일반 회원 계정으로 로그인 했을 경우
+          adminIcon.forEach((item) => {
+            item.style.display = "none"; // admin icon 안보이게
+          });
+          userIcon.forEach((item) => {
+            item.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
+          });
+          // userIcon.innerHTML = `<button class="signout">${data.userid} | <a href="#">Logout</a></button>`;
+
+          cart.forEach((item) => {
+            item.innerHTML = cartItemEl;
+          });
+        }
       }
 
       const signoutBtn = document.querySelector(".signout a");

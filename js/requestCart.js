@@ -9,7 +9,6 @@ const getCartLists = async () => {
         cartWrapper.innerHTML = `<p class="no-cart">장바구니에 상품이 없습니다.</p>`;
         return;
       }
-
       cartData.map((list) => {
         console.log(list);
         cartListEl = `
