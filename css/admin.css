@@ -11,7 +11,7 @@
 /* Product Panel style */
 .admin-wrapper .admin-panels{width: 100%; height: auto; margin-top: var(--el-medium); }
 .admin-wrapper .panel{width: 100%; height: auto; display: flex; border: 1px solid var(--color-gray-d); padding:.5rem; column-gap: .25rem; flex-direction: column;}
-.admin-wrapper .panel:nth-child(1){display: none;}
+.admin-wrapper .panel:nth-child(2){display: none;}
 
 /* Products Input Panel Style */
 .admin-wrapper .panel .product-panel-wrapper{width: 100%; height: auto; display: flex; column-gap: .25rem;}
