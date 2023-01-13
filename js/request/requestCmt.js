@@ -29,8 +29,8 @@ cmtBtn.addEventListener("click", async () => {
       return res.json();
     })
     .then((resData) => {
-      alert(resData.msg);
       // console.log(resData);
+      alert(resData.msg);
       location.reload();
     })
     .catch((err) => {
