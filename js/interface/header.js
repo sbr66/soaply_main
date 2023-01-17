@@ -38,7 +38,7 @@ window.addEventListener("load", function () {
   /********** Mobile Menu Toggle *********/
   const mobileBtn = document.querySelector(".mobile-btn");
 
-  toggleMobileBtn = (e) => {
+  const toggleMobileBtn = (e) => {
     const target = e.currentTarget;
     const menuHeight = mobileMenus.scrollHeight; //scrollheight : 지정 대상의 높이값을 읽어준다.
     target.classList.toggle("active");

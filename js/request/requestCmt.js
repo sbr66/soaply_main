@@ -3,7 +3,7 @@ const cmtBtn = document.querySelector("button[type=submit]");
 const isCheck = document.getElementsByName("cmt_star");
 const url = document.location.href;
 const urlIndex = Number(url.split("=")[1]);
-console.log(isCheck);
+// console.log(isCheck);
 //console.log(`p_idx: ${urlIndex}`);
 
 // 상품평 작성
@@ -143,7 +143,7 @@ function getRating(star) {
     // console.log(num.rating);
     starArr.push(num.rating);
   });
-  console.log(starArr);
+  // console.log(starArr);
 
   starLists.forEach((elm, i) => {
     // console.log(starArr[i]);
@@ -159,7 +159,7 @@ function getRating(star) {
 
 // 수정하기 기능 함수 선언
 function updateCmt(cmtObjs) {
-  //console.log(cmtObjs);
+  console.log(cmtObjs);
   const cmtUpBtns = document.querySelectorAll("button.cmt-update");
   // console.log(cmtUpBtns);
   if (cmtObjs.length !== 0 && cmtUpBtns) {
@@ -179,9 +179,45 @@ function updateCmt(cmtObjs) {
           changeInput.innerHTML = `
             <form onsubmit="return false;" class="update-form update-form-${thisIdx}">
               <input type="text" name="update_cont" value="${cmtObjs[thisIdx].cmt_cont}">
+              <div class="rating">
+                <div class="stars">
+                  <input type="radio" name="cmt_star" id="up-star1" value="5" class="val-5"/>
+                    <label for="up-star1">
+                      <i class="ri-star-line"></i>
+                      <i class="ri-star-fill"></i>
+                    </label>
+                    <input type="radio" name="cmt_star" id="up-star2" value="4" class="val-4"/>
+                    <label for="up-star2">
+                      <i class="ri-star-line"></i>
+                      <i class="ri-star-fill"></i>
+                    </label>
+                    <input type="radio" name="cmt_star" id="up-star3" value="3" class="val-3"/>
+                    <label for="up-star3">
+                      <i class="ri-star-line"></i>
+                      <i class="ri-star-fill"></i>
+                    </label>
+                    <input type="radio" name="cmt_star" id="up-star4" value="2" class="val-2"/>
+                    <label for="up-star4">
+                      <i class="ri-star-line"></i>
+                      <i class="ri-star-fill"></i>
+                    </label>
+                    <input type="radio" name="cmt_star" id="up-star5" value="1" class="val-1"/>
+                    <label for="up-star5">
+                      <i class="ri-star-line"></i>
+                      <i class="ri-star-fill"></i>
+                    </label>
+                </div>
+              </div>
               <button type="submit">수정입력</button>
             </form>
           `;
+
+          // 기존 입력된 별점 가져오기
+          const upRadioNum = document.querySelector(
+            `.update-form-${thisIdx} input[type="radio"].val-${cmtObjs[thisIdx].rating}`
+          );
+          console.log(upRadioNum);
+          upRadioNum.checked = true;
 
           const udSubmitBtn = document.querySelector(
             `.update-form-${thisIdx} button`
@@ -205,8 +241,8 @@ function updateCmt(cmtObjs) {
               })
               .then((resData) => {
                 alert(resData.msg);
-                //console.log(resData);
                 location.reload();
+                // console.log(resData);
               })
               .catch((err) => {
                 console.log(err);
