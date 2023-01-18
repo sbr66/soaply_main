@@ -67,14 +67,39 @@ const getCmtList = async () => {
   )
     .then((res) => res.json())
     .then((lists) => {
-      // console.log(lists);
+      console.log(lists);
       if (lists.msg) {
         // 상품평이 없을 때
         cmtWrapper.innerHTML = `<p class="no-list">${lists.msg}</p>`;
         return;
       }
       // console.log(lists);
-      listCount.textContent = lists.length;
+
+      listCount.textContent = lists.length; // 입력된 평가글 개수 표시
+
+      const avg = Number(lists[0].avg); // 평균값 숫자로 변환
+      const floatAvg = parseFloat(avg).toFixed(2); // parseFloat : 실수 표시, toFixed(n) : 소수점 n번째 자리까지 표시 => 반올림, 반내림 가능
+      const starVal = document.querySelector(".star-avg-val");
+      const riFill = document.querySelector(".ri-fill");
+
+      starVal.textContent = floatAvg; // 평균값 표시
+      riFill.style.width = (floatAvg / 5) * 100 + "%";
+      console.log(floatAvg);
+
+      // let ratingArr = [];
+      // lists.forEach((i) => {
+      //   ratingArr.push(Number(i.rating));
+      // });
+      // console.log(ratingArr); // 별점값 배열
+      // const result = ratingArr.reduce(function add(sum, currValue) {
+      //   return sum + currValue;
+      // }, 0);
+      // console.log(result); // 별점값 합계
+      // const average = result / ratingArr.length;
+      // console.log(average); // 별점값 평균
+      // const floatAvg2 = parseFloat(average).toFixed(2);
+      // console.log(floatAvg2);
+
       let listsElmt;
       lists.map((list, idx) => {
         if (list.user_id === "guest") {
@@ -159,7 +184,7 @@ function getRating(star) {
 
 // 수정하기 기능 함수 선언
 function updateCmt(cmtObjs) {
-  console.log(cmtObjs);
+  // console.log(cmtObjs);
   const cmtUpBtns = document.querySelectorAll("button.cmt-update");
   // console.log(cmtUpBtns);
   if (cmtObjs.length !== 0 && cmtUpBtns) {
@@ -181,28 +206,28 @@ function updateCmt(cmtObjs) {
               <input type="text" name="update_cont" value="${cmtObjs[thisIdx].cmt_cont}">
               <div class="rating">
                 <div class="stars">
-                  <input type="radio" name="cmt_star" id="up-star1" value="5" class="val-5"/>
-                    <label for="up-star1">
+                  <input type="radio" name="cmt_star" id="up-star-${thisIdx}-1" value="5" class="val-5"/>
+                    <label for="up-star-${thisIdx}-1">
                       <i class="ri-star-line"></i>
                       <i class="ri-star-fill"></i>
                     </label>
-                    <input type="radio" name="cmt_star" id="up-star2" value="4" class="val-4"/>
-                    <label for="up-star2">
+                    <input type="radio" name="cmt_star" id="up-star-${thisIdx}-2" value="4" class="val-4"/>
+                    <label for="up-star-${thisIdx}-2">
                       <i class="ri-star-line"></i>
                       <i class="ri-star-fill"></i>
                     </label>
-                    <input type="radio" name="cmt_star" id="up-star3" value="3" class="val-3"/>
-                    <label for="up-star3">
+                    <input type="radio" name="cmt_star" id="up-star-${thisIdx}-3" value="3" class="val-3"/>
+                    <label for="up-star-${thisIdx}-3">
                       <i class="ri-star-line"></i>
                       <i class="ri-star-fill"></i>
                     </label>
-                    <input type="radio" name="cmt_star" id="up-star4" value="2" class="val-2"/>
-                    <label for="up-star4">
+                    <input type="radio" name="cmt_star" id="up-star-${thisIdx}-4" value="2" class="val-2"/>
+                    <label for="up-star-${thisIdx}-4">
                       <i class="ri-star-line"></i>
                       <i class="ri-star-fill"></i>
                     </label>
-                    <input type="radio" name="cmt_star" id="up-star5" value="1" class="val-1"/>
-                    <label for="up-star5">
+                    <input type="radio" name="cmt_star" id="up-star-${thisIdx}-5" value="1" class="val-1"/>
+                    <label for="up-star-${thisIdx}-5">
                       <i class="ri-star-line"></i>
                       <i class="ri-star-fill"></i>
                     </label>

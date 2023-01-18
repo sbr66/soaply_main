@@ -65,3 +65,11 @@ em, strong{font-style: normal;  font-weight: var(--fw-400);}
 .update-form{width: 100%; height: auto; display: flex; justify-content: space-between; border: 1px solid var(--color-gray-d); padding: .25rem; column-gap: .25rem;}
 .update-form input{width: 85%; height: auto; padding: var(--el-normal); border: 1px solid var(--color-gray-d); border-radius: .25rem;}
 .update-form button{width: calc(15% - 0.25rem); background: var(--color-black); color: #fff;}
+
+/* Average stars Style */
+.star-avg-box{position:relative; _background:#ddd; display:flex; align-items: center; font-size:1.1rem;}
+.star-avg-box .ri-line{position:relative; z-index:5; top:0; height:100%;}
+.star-avg-box .ri-fill{position:absolute; left:0; z-index:10; white-space:nowrap; overflow:hidden;}
+.star-avg-box .ri-line,
+.star-avg-box .ri-fill{display:flex; align-items: center;}
+.star-avg-val{font-size: var(--fs-14); color: var(--color-gray-5olor);}
