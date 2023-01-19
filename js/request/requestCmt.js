@@ -3,8 +3,6 @@ const cmtBtn = document.querySelector("button[type=submit]");
 const isCheck = document.getElementsByName("cmt_star");
 const url = document.location.href;
 const urlIndex = Number(url.split("=")[1]);
-// console.log(isCheck);
-//console.log(`p_idx: ${urlIndex}`);
 
 // 상품평 작성
 cmtBtn.addEventListener("click", async () => {
@@ -43,12 +41,10 @@ cmtBtn.addEventListener("click", async () => {
     }
   )
     .then((res) => {
-      //console.log(res);
       //status = res.status;
       return res.json();
     })
     .then((resData) => {
-      // console.log(resData);
       alert(resData.msg);
       location.reload();
     })
@@ -165,13 +161,10 @@ function getRating(star) {
   const starLists = document.querySelectorAll(".star-lists");
   // console.log(star.rating); // 여러개 제이슨 요소이기 때문에 읽히지 않음 : undefind
   star.forEach((num) => {
-    // console.log(num.rating);
     starArr.push(num.rating);
   });
-  // console.log(starArr);
 
   starLists.forEach((elm, i) => {
-    // console.log(starArr[i]);
     const negativeNo = 5 - starArr[i];
     for (let j = 0; j < starArr[i]; j++) {
       elm.innerHTML += '<i class="ri-star-fill"></i>';
@@ -184,24 +177,30 @@ function getRating(star) {
 
 // 수정하기 기능 함수 선언
 function updateCmt(cmtObjs) {
-  // console.log(cmtObjs);
   const cmtUpBtns = document.querySelectorAll("button.cmt-update");
-  // console.log(cmtUpBtns);
   if (cmtObjs.length !== 0 && cmtUpBtns) {
     cmtUpBtns.forEach((btn) => {
-      //console.log(btn);
       btn.addEventListener("click", function () {
-        // console.log(this);
-        // 노드 추적은 공백(엔터)을 포함한다.
-        const changeInput = this.parentNode.nextSibling.nextSibling;
-        const thisIdx = changeInput.getAttribute("id").split("-")[1];
-        //console.log(thisIdx);
-        // console.log(changeInput);
+        const itemClass = this.className;
+        console.log(itemClass);
 
-        this.classList.toggle("active");
-        if (btn.classList.contains("active")) {
-          this.textContent = "취소하기";
-          changeInput.innerHTML = `
+        cmtUpBtns.forEach((aBtn) => {
+          aBtn.classList.remove("active");
+        });
+
+        if (itemClass == "cmt-update") {
+          this.classList.add("active");
+        }
+
+        cmtUpBtns.forEach((bBtn, idx) => {
+          // 노드 추적은 공백(엔터)을 포함한다.
+          const changeInput = cmtUpBtns[idx].parentNode.nextSibling.nextSibling;
+          const thisIdx = changeInput.getAttribute("id").split("-")[1];
+
+          // this.classList.toggle("active");
+          if (bBtn.classList.contains("active")) {
+            cmtUpBtns[idx].textContent = "취소하기";
+            changeInput.innerHTML = `
             <form onsubmit="return false;" class="update-form update-form-${thisIdx}">
               <input type="text" name="update_cont" value="${cmtObjs[thisIdx].cmt_cont}">
               <div class="rating">
@@ -237,48 +236,49 @@ function updateCmt(cmtObjs) {
             </form>
           `;
 
-          // 기존 입력된 별점 가져오기
-          const upRadioNum = document.querySelector(
-            `.update-form-${thisIdx} input[type="radio"].val-${cmtObjs[thisIdx].rating}`
-          );
-          console.log(upRadioNum);
-          upRadioNum.checked = true;
-
-          const udSubmitBtn = document.querySelector(
-            `.update-form-${thisIdx} button`
-          );
-
-          udSubmitBtn.addEventListener("click", async function () {
-            const formData = new FormData(
-              document.querySelector(`.update-form-${thisIdx}`)
+            // 기존 입력된 별점 가져오기
+            const upRadioNum = document.querySelector(
+              `.update-form-${thisIdx} input[type="radio"].val-${cmtObjs[thisIdx].rating}`
             );
-            await fetch(
-              `/main_backend/model/cmt_ctrl.php?cmt_idx=${cmtObjs[thisIdx].cmt_idx}&req_sign=patch_cmt`,
-              {
-                method: "PATCH",
-                body: formData,
-              }
-            )
-              .then((res) => {
-                //console.log(res);
-                //status = res.status;
-                return res.json();
-              })
-              .then((resData) => {
-                alert(resData.msg);
-                location.reload();
-                // console.log(resData);
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          });
-        } else {
-          this.textContent = "수정하기";
-          changeInput.innerHTML = `
+            console.log(upRadioNum);
+            upRadioNum.checked = true;
+
+            const udSubmitBtn = document.querySelector(
+              `.update-form-${thisIdx} button`
+            );
+
+            udSubmitBtn.addEventListener("click", async function () {
+              const formData = new FormData(
+                document.querySelector(`.update-form-${thisIdx}`)
+              );
+              await fetch(
+                `/main_backend/model/cmt_ctrl.php?cmt_idx=${cmtObjs[thisIdx].cmt_idx}&req_sign=patch_cmt`,
+                {
+                  method: "PATCH",
+                  body: formData,
+                }
+              )
+                .then((res) => {
+                  //console.log(res);
+                  //status = res.status;
+                  return res.json();
+                })
+                .then((resData) => {
+                  alert(resData.msg);
+                  location.reload();
+                  // console.log(resData);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            });
+          } else {
+            cmtUpBtns[idx].textContent = "수정하기";
+            changeInput.innerHTML = `
             <p>${cmtObjs[thisIdx].cmt_cont}</p>
           `;
-        }
+          }
+        });
       });
     });
   } else {

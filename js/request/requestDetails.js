@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   // console.log(url);
   // split 메서드 참조 : https://hianna.tistory.com/377
   const urlIndex = Number(url.split("=")[1]); // string 타입의 urlIndex를 number 타입으로 변경
-  ///console.log(typeof urlIndex);
+  console.log(urlIndex);
   const detailImage = document.querySelector(".detail-image");
   const detailText = document.querySelector(".detail-text");
 

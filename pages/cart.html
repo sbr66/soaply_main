@@ -29,10 +29,7 @@
   <body>
     <div class="wrapper cart-wrapper">
       <!-- Header Include -->
-      <div
-        class="header-wrapper"
-        w3-include-html="/main_project/include/header.html"
-      ></div>
+      <div id="header-wrapper" class="header-wrapper" role="header"></div>
 
       <!-- Sign In form Field Section -->
       <div class="cart-box">
@@ -113,15 +110,19 @@
       </div>
 
       <!-- Footer Include -->
-      <div
-        class="footer-wrapper"
-        w3-include-html="/main_project/include/Footer.html"
-      ></div>
+      <div role="footer" id="footer"></div>
     </div>
 
+    <!-- jQuery framework -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Include Files -->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="/main_project/js/interface/include.js"></script>
+
     <!-- Main Javascript -->
     <script src="/main_project/js/interface/header.js"></script>
     <script src="/main_project/js/interface/fixedHeader.js"></script>

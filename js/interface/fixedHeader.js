@@ -1,4 +1,5 @@
-window.addEventListener("load", function () {
+// window.addEventListener("load", function () {
+$(document).ajaxComplete(function () {
   /********** Header Change Effect*********/
   const header = document.querySelector("#header");
   const stickyHeader = () => {

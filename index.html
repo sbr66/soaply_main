@@ -33,10 +33,8 @@
   <body>
     <div class="wrapper">
       <!-- Header Include -->
-      <div
-        class="header-wrapper"
-        w3-include-html="/main_project/include/header.html"
-      ></div>
+      <div id="header-wrapper" class="header-wrapper" role="header"></div>
+      <!-- role: 태그의 역할이 무엇인지 표기(시맨틱 태그 생기기 전에 사용하던것) -->
 
       <!-- landing-Section -->
       <section id="main-section" class="landing-section section nav-target">
@@ -261,7 +259,7 @@
       <section class="gallery-section section nav-target">
         <div class="container">
           <div class="title-box">
-            <h2 class="section-title">The Gallery From Clients</h2>
+            <h2 class="section-title">The Gallery</h2>
             <a href="/main_project/pages/gallery.html" class="common-btn"
               >전체보기</a
             >
@@ -338,25 +336,24 @@
       </section>
 
       <!-- Footer Include -->
-      <div
-        class="header-wrapper"
-        w3-include-html="/main_project/include/Footer.html"
-      ></div>
+      <div role="footer" id="footer"></div>
     </div>
-    <!-- Include Files -->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script src="/main_project/js/interface/include.js"></script>
 
     <!-- Scroll Reveal Plugin -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Swiper Slider Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
     <!-- jQuery framework -->
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Include Files -->
+    <script src="/main_project/js/interface/include.js"></script>
+
     <!-- Masonry and Imagesloaded plugins -->
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
