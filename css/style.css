@@ -69,16 +69,6 @@
 .swiper-pagination-bullet{width: 12px; height: 12px;}
 .swiper-pagination-bullet-active{background: var(--color-black);}
 
-/********** Special Offer Section Style *********/
-/* .offers-section .title-box h2{font-weight: var(--fw-300); text-align: center;}
-.offers-section .products{display: flex; flex-wrap: wrap;}
-.offers-section .product-frame{width: 33.33%; padding: var(--el-medium);}
-.offers-section img{width: 100%;}
-.offers-section .product-text{display: flex; flex-direction: column; row-gap: var(--el-medium); padding-top: var(--el-medium); 
-  align-items: center;}
-.offers-section .product-text h4{font-weight: var(--fw-300);}
-.offers-section .product-text p{text-align: center; font-weight: var(--fw-300); font-size: var(--fs-14);} */
-
 .products{display: flex; flex-wrap: wrap;}
 .product-frame{width: var(--ls-1-3); padding: var(--el-medium);}
 .product-frame img{width: 100%; border-radius: .25rem; height: 350px;}
@@ -110,11 +100,6 @@
 
 .grid-item .overlay{display: block; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.5); position: absolute; left: 0; top: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all .3s;}
 .grid-item:hover .overlay{opacity: 1;}
-/********** Insta Section Style *********/
-/* 
-.insta-section .insta-wrapper{display: flex;}
-.insta-section .insta-wrapper .insta-item{width: var(--ls-1-3);}
-.insta-section .insta-wrapper .insta-item img{width: 100%;} */
 
 .insta-section .insta-wrapper{display: grid; grid-template-columns: 1fr 1fr 1fr;}
 .insta-section .insta-wrapper > div{}

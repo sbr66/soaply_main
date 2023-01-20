@@ -1,4 +1,3 @@
-// window.addEventListener("load", function () {
 $(document).ajaxComplete(function () {
   /********** Header Change Effect*********/
   const header = document.querySelector("#header");

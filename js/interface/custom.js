@@ -7,19 +7,6 @@ window.addEventListener("resize", () => {
   document.querySelector("#fh").style.height = instaImgHeight + "px";
 });
 
-/********** Navigation Moving to Target Section *********/
-
-// const navLists = document.querySelectorAll("header .container .nav-lists li");
-// const navTargets = document.querySelectorAll(".nav-target");
-
-// navLists.forEach((navL, i) => {
-//   navL.addEventListener("click", () => {
-//     const location = navTargets[i].offsetTop;
-//     //console.log(location);
-//     window.scrollTo({ top: location });
-//   });
-// });
-
 window.addEventListener("load", function () {
   //********** Scrollreveal Effect *********/
   const sr = ScrollReveal({

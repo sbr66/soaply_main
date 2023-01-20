@@ -81,7 +81,7 @@ span.bar_line:nth-child(2){margin:5px auto;}
  }
 
  /********** Footer Section Style *********/
-footer{padding: 3rem 0; width: 100%; height: auto;}
+footer, #footer{padding: 3rem 0; width: 100%; height: auto;}
 footer .footer-upper{display: flex; justify-content: space-between; align-items: center;}
 footer .footer-logo{width: 100px;}
 footer .footer-logo img{width: var(--ls-full);}

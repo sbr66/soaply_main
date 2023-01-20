@@ -1,26 +1,13 @@
 window.addEventListener("load", function () {
   async function checkSign() {
     const userIcon = document.querySelectorAll(".user");
-    // console.log(userIcon); // 2개 배열 요소
     const adminIcon = document.querySelectorAll(".admin");
     const cart = document.querySelectorAll(".cart");
-    // console.log(cart);
     this.fetch("/main_backend/etc/check_sign.php")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(
-          "id :",
-          data.userid,
-          "user idx :",
-          data.user_idx,
-          "cart count :",
-          data.cart_count,
-          "user level :",
-          data.user_lvl
-        );
-
         const cartItemEl = `<a href="/main_project/pages/cart.html"><i class="ri-shopping-cart-line"></i><em>(${data.cart_count})</em></a>`;
 
         if (data.userid === "guest") {

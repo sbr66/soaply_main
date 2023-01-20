@@ -15,7 +15,6 @@ const getData = async () => {
     .then((data) => {
       let dataEl;
       data.map((item) => {
-        //console.log(item);
         dataEl = `
                 <div class="product-frame">
                         <div class="product-item">

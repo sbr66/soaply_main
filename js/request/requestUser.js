@@ -5,7 +5,6 @@ window.addEventListener("load", function () {
     await this.fetch("/main_backend/model/user_ctrl.php?req_sign=get_user")
       .then((response) => response.json())
       .then((user) => {
-        // console.log(user);
         let userListEl;
         user.map((item, i) => {
           userListEl = `
@@ -40,9 +39,7 @@ window.addEventListener("load", function () {
 
   function updateUser(data) {
     // updateUser 함수 선언
-    // console.log(data);
     const updtBtns = document.querySelectorAll(".updt button");
-    // console.log(updtBtns);
 
     updtBtns.forEach((btn, i) => {
       btn.addEventListener("click", async function () {
@@ -71,7 +68,6 @@ window.addEventListener("load", function () {
 
   function deleteUser(data) {
     const delBtns = document.querySelectorAll(".del button");
-    // console.log(delBtns);
 
     delBtns.forEach((btn, i) => {
       btn.addEventListener("click", async function () {
@@ -81,7 +77,6 @@ window.addEventListener("load", function () {
         )
           .then((res) => res.json())
           .then((del) => {
-            // console.log(del);
             alert(del.msg);
             location.reload();
           })

@@ -63,13 +63,11 @@ const getCmtList = async () => {
   )
     .then((res) => res.json())
     .then((lists) => {
-      console.log(lists);
       if (lists.msg) {
         // 상품평이 없을 때
         cmtWrapper.innerHTML = `<p class="no-list">${lists.msg}</p>`;
         return;
       }
-      // console.log(lists);
 
       listCount.textContent = lists.length; // 입력된 평가글 개수 표시
 
@@ -80,21 +78,6 @@ const getCmtList = async () => {
 
       starVal.textContent = floatAvg; // 평균값 표시
       riFill.style.width = (floatAvg / 5) * 100 + "%";
-      console.log(floatAvg);
-
-      // let ratingArr = [];
-      // lists.forEach((i) => {
-      //   ratingArr.push(Number(i.rating));
-      // });
-      // console.log(ratingArr); // 별점값 배열
-      // const result = ratingArr.reduce(function add(sum, currValue) {
-      //   return sum + currValue;
-      // }, 0);
-      // console.log(result); // 별점값 합계
-      // const average = result / ratingArr.length;
-      // console.log(average); // 별점값 평균
-      // const floatAvg2 = parseFloat(average).toFixed(2);
-      // console.log(floatAvg2);
 
       let listsElmt;
       lists.map((list, idx) => {
@@ -156,7 +139,6 @@ getCmtList();
 
 // 별점 출력 함수 선언
 function getRating(star) {
-  // console.log(star); // lists
   let starArr = [];
   const starLists = document.querySelectorAll(".star-lists");
   // console.log(star.rating); // 여러개 제이슨 요소이기 때문에 읽히지 않음 : undefind
@@ -182,7 +164,6 @@ function updateCmt(cmtObjs) {
     cmtUpBtns.forEach((btn) => {
       btn.addEventListener("click", function () {
         const itemClass = this.className;
-        console.log(itemClass);
 
         cmtUpBtns.forEach((aBtn) => {
           aBtn.classList.remove("active");
@@ -266,7 +247,6 @@ function updateCmt(cmtObjs) {
                 .then((resData) => {
                   alert(resData.msg);
                   location.reload();
-                  // console.log(resData);
                 })
                 .catch((err) => {
                   console.log(err);

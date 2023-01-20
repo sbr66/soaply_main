@@ -2,11 +2,6 @@ window.addEventListener("load", function () {
   /********** Elements Clone For Mobile*********/
   this.setTimeout(function () {
     const mobileMenus = document.querySelector(".mobile-menus");
-    // const navs = document.querySelector(".nav-lists").cloneNode(true);
-    // const info = document.querySelector(".info").cloneNode(true);
-
-    // mobileMenus.appendChild(navs);
-    // mobileMenus.appendChild(info);
 
     /********** Change Menu Link Between Main and Sub pages*********/
     // 1. 웹주소에서 'index'포함 여부를 파악한다.
@@ -18,9 +13,7 @@ window.addEventListener("load", function () {
     const links = document.querySelectorAll(
       ".home-link, .shop-link, .gal-link"
     );
-    // console.log(links);
 
-    // console.log(pgadr.includes("shop"));
     if (pgadr.includes("index")) {
       links.forEach((item) => {
         item.setAttribute("href", "#");

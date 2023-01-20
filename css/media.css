@@ -75,7 +75,6 @@
     .slider-section .slider-nav{display: none;}
     .slider-section .swiper-slide{flex-direction: column; align-items: center;}
     .slider-section .swiper-slide > div{ width: var(--ls-full); width: 80%; margin: auto;}
-    /* .slider-section .swiper-slide > div.slider-image{width: 80%; margin: auto;} */
     .slider-section .slider-text {align-items: center; text-align: center;}
     /* Product Section Style */
     .product-frame{width: var(--ls-1-2);}
@@ -117,9 +116,6 @@
 
     /* Features Section Style */
     .slider-section .swiper-slide > div.slider-image{width: 90%;}
-    /* Product Section Style */
-    /* .product-frame{width: var(--ls-full);}
-    .product-frame img{width: 60%; margin: auto;} */
 
     /* Review Section Style */
      .review-section .review-frame{width: var(--ls-full);}
