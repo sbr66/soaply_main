@@ -3,12 +3,12 @@ window.addEventListener("load", function () {
     const userIcon = document.querySelectorAll(".user");
     const adminIcon = document.querySelectorAll(".admin");
     const cart = document.querySelectorAll(".cart");
-    this.fetch("/main_backend/etc/check_sign.php")
+    this.fetch("/soaply_backend/etc/check_sign.php")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        const cartItemEl = `<a href="/main_project/pages/cart.html"><i class="ri-shopping-cart-line"></i><em>(${data.cart_count})</em></a>`;
+        const cartItemEl = `<a href="/soaply/pages/cart.html"><i class="ri-shopping-cart-line"></i><em>(${data.cart_count})</em></a>`;
 
         if (data.userid === "guest") {
           // 로그인 하지 않았을때
@@ -17,13 +17,10 @@ window.addEventListener("load", function () {
           }); // admin icon 가림
           userIcon.forEach((item) => {
             // 사용자 정보 없는 유저 아이콘
-            item.innerHTML = `<a href="/main_project/pages/sign-in.html">
+            item.innerHTML = `<a href="/soaply/pages/sign-in.html">
           <i class="ri-user-3-fill"></i>
         </a>`;
           });
-          //   userIcon.innerHTML = `<a href="/main_project/pages/sign-in.html">
-          //   <i class="ri-user-3-fill"></i>
-          // </a>`;
           cart.forEach((item) => {
             item.innerHTML = cartItemEl;
           }); // 카트 숫자 아이콘
@@ -59,7 +56,7 @@ window.addEventListener("load", function () {
           signoutBtn.forEach((btn) => {
             btn.addEventListener("click", (e) => {
               e.preventDefault(); // 로그아웃하면 주소값 끝에 #이 붙으면서 details 페이지 사진들 사라짐 -> preventDefault()로 signoutBtn(a 태그)의 디폴트 속성 지움(href="#" 지움)
-              this.fetch("/main_backend/model/register.php?q=signout")
+              this.fetch("/soaply_backend/model/register.php?q=signout")
                 .then((res) => res.json())
                 .then((data) => {
                   console.log(data);

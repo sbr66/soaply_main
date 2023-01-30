@@ -10,7 +10,7 @@ if (pgadr.includes("shop")) {
 }
 
 const getData = async () => {
-  await fetch(`/main_backend/model/get_products.php?qnt=${queryQnt}`)
+  await fetch(`/soaply_backend/model/get_products.php?qnt=${queryQnt}`)
     .then((response) => response.json())
     .then((data) => {
       let dataEl;
@@ -18,7 +18,7 @@ const getData = async () => {
         dataEl = `
                 <div class="product-frame">
                         <div class="product-item">
-                          <img src="/main_project/images/products/${
+                          <img src="/soaply/images/products/${
                             item.pro_img
                           }" alt="" />
                           <div class="product-text">
@@ -29,7 +29,7 @@ const getData = async () => {
                             <p>
                               ${item.pro_desc}
                             </p>
-                            <a href="/main_project/pages/details.html?idx=${
+                            <a href="/soaply/pages/details.html?idx=${
                               item.pro_idx
                             }" class="common-btn">자세히 보기</a>
                           </div>

@@ -45,7 +45,7 @@ signUp.addEventListener("click", () => {
   // 입력창 작성 체크 끝 : 위 부분이 완료 되면 다음 코드로 진행
   //   formdata 참조 : https://ko.javascript.info/formdata
   const formData = new FormData(document.querySelector("form"));
-  fetch("/main_backend/model/register.php", {
+  fetch("/soaply_backend/model/register.php", {
     method: "POST",
     body: formData,
   })
@@ -56,7 +56,7 @@ signUp.addEventListener("click", () => {
     })
     .then((resData) => {
       alert(resData.msg);
-      location.href = "/main_project/index.html";
+      location.href = "/soaply/index.html";
     })
     .catch((err) => {
       console.log(err);

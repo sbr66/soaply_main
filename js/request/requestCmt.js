@@ -34,7 +34,7 @@ cmtBtn.addEventListener("click", async () => {
   //   formdata 참조 : https://ko.javascript.info/formdata
   const formData = new FormData(document.querySelector(".comment-form > form"));
   await fetch(
-    `/main_backend/model/cmt_ctrl.php?p_idx=${urlIndex}&req_sign=post_cmt`,
+    `/soaply_backend/model/cmt_ctrl.php?p_idx=${urlIndex}&req_sign=post_cmt`,
     {
       method: "POST",
       body: formData,
@@ -59,13 +59,17 @@ const listCount = document.querySelector(".comment-info strong");
 // Get Comments
 const getCmtList = async () => {
   await fetch(
-    `/main_backend/model/cmt_ctrl.php?p_idx=${urlIndex}&req_sign=get_cmt`
+    `/soaply_backend/model/cmt_ctrl.php?p_idx=${urlIndex}&req_sign=get_cmt`
   )
     .then((res) => res.json())
     .then((lists) => {
+      const starVal = document.querySelector(".star-avg-val");
+      const riFill = document.querySelector(".ri-fill");
       if (lists.msg) {
         // 상품평이 없을 때
         cmtWrapper.innerHTML = `<p class="no-list">${lists.msg}</p>`;
+        starVal.textContent = ""; // 평균값 표시
+        riFill.style.width = "0";
         return;
       }
 
@@ -73,8 +77,6 @@ const getCmtList = async () => {
 
       const avg = Number(lists[0].avg); // 평균값 숫자로 변환
       const floatAvg = parseFloat(avg).toFixed(2); // parseFloat : 실수 표시, toFixed(n) : 소수점 n번째 자리까지 표시 => 반올림, 반내림 가능
-      const starVal = document.querySelector(".star-avg-val");
-      const riFill = document.querySelector(".ri-fill");
 
       starVal.textContent = floatAvg; // 평균값 표시
       riFill.style.width = (floatAvg / 5) * 100 + "%";
@@ -221,7 +223,7 @@ function updateCmt(cmtObjs) {
             const upRadioNum = document.querySelector(
               `.update-form-${thisIdx} input[type="radio"].val-${cmtObjs[thisIdx].rating}`
             );
-            console.log(upRadioNum);
+            // console.log(upRadioNum);
             upRadioNum.checked = true;
 
             const udSubmitBtn = document.querySelector(
@@ -233,7 +235,7 @@ function updateCmt(cmtObjs) {
                 document.querySelector(`.update-form-${thisIdx}`)
               );
               await fetch(
-                `/main_backend/model/cmt_ctrl.php?cmt_idx=${cmtObjs[thisIdx].cmt_idx}&req_sign=patch_cmt`,
+                `/soaply_backend/model/cmt_ctrl.php?cmt_idx=${cmtObjs[thisIdx].cmt_idx}&req_sign=patch_cmt`,
                 {
                   method: "PATCH",
                   body: formData,

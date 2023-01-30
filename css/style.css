@@ -79,7 +79,7 @@
 .product-text p{padding: var(--el-medium); font-size: var(--fs-small-text);}
 
 /********** Review Section Style *********/
-.review-section{background: url(/main_project/images/review-background.jpeg) no-repeat center; background-size: cover;}
+.review-section{background: url(/soaply/images/review-background.jpeg) no-repeat center; background-size: cover;}
 .review-section .reviews{display: flex; flex-wrap: wrap;}
 .review-section .review-frame{width: var(--ls-1-3); padding: var(--el-medium); }
 .review-section .review-item{background: #fff; padding: var(--el-wide); border-radius: .25rem; text-align: center;}
