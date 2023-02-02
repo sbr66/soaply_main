@@ -68,7 +68,7 @@ const getCmtList = async () => {
       if (lists.msg) {
         // 상품평이 없을 때
         cmtWrapper.innerHTML = `<p class="no-list">${lists.msg}</p>`;
-        starVal.textContent = ""; // 평균값 표시
+        starVal.textContent = parseFloat(0).toFixed(2); // 평균값 표시
         riFill.style.width = "0";
         return;
       }
@@ -79,7 +79,7 @@ const getCmtList = async () => {
       const floatAvg = parseFloat(avg).toFixed(2); // parseFloat : 실수 표시, toFixed(n) : 소수점 n번째 자리까지 표시 => 반올림, 반내림 가능
 
       starVal.textContent = floatAvg; // 평균값 표시
-      riFill.style.width = (floatAvg / 5) * 100 + "%";
+      riFill.style.width = (floatAvg / 5) * 100 - 8 + "%";
 
       let listsElmt;
       lists.map((list, idx) => {
